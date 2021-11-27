@@ -24,11 +24,11 @@ Post.init(
             type: DataTypes.NOW,
             allowNull:false,
         },
-        user_id:{
+        poster:{
             type: DataTypes.INTEGER,
             references:{
                 model:'user',
-                key:'id'
+                key:'username'
             }
         }
     },
