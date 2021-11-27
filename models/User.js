@@ -26,14 +26,6 @@ User.init(
                 len:[6]
             }
         },
-        posts:{
-            type:DataTypes.INTEGER,
-            allowNull: false,
-            references:{
-                model:"post",
-                key:"title"
-            }
-        }
     },
     {
         hooks:{
