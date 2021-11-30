@@ -1,0 +1,16 @@
+<section class ="flex-row justify-center">
+    {{#each blog.posts as |post|}}
+    <section class = "homepage-post-heading">
+    <h1>
+        {{post.title}}
+    </h1>
+    <h6>
+        Posted by {{post.poster}} on {{post.date}}
+    </h6>
+    </section>
+    <section>
+    <p>
+        {{post.body}}
+    </p>
+    </section>
+    {{/each}}
