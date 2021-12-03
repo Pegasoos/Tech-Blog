@@ -4,6 +4,13 @@
         Posted by {{post.poster}} on {{post.date}}</h5>
     <p>{{post.body}}</p>
 </section>
-<button id = "edit-button">Edit Post</button>
+
+<!--Form for editing post-->
+<form class = "hidden">
+    <label for="post-title">{{post.title}}</label>
+    <input type="text" id="post-title">
+    <label for="post-body">{{post.body}}</label>
+    <textarea id = "post-body"></textarea>
+    <button id = "edit-button">Edit Post</button>
 <button id = "delete-button">Delete Post</button>
-<!--Figure out how to render editing textarea and save button-->
+</form>
