@@ -20,7 +20,7 @@ const seedDatabase = async () => {
     }
   }
   catch(err){
-    console.log(error)
+    console.log(err)
   }
     process.exit(0);
   };

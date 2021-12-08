@@ -27,6 +27,8 @@ Post.init(
         },
         poster:{
             type: DataTypes.STRING,
+            allowNull:false,
+            unique:true,
             references:{
                 model:'user',
                 key:'username'
