@@ -14,7 +14,7 @@ router.get('/', async (req, res) =>{
         res.status(500).json(err);
     }
 });
-
+//route to render individual posts
 router.get('/post/:id', async (req,res) =>{
     try{
     const postData = await Post.findByPk(req.params.id);
@@ -26,7 +26,16 @@ catch(err){
     res.status(500).json(err);
 }
 });
-
+//route to find posts by poster id and render to dashboard
+router.get('/dashboard', async (req,res) =>{
+try{
+//return after sessions set up
+}
+catch(err){
+res.status(500).json(err);
+}
+})
+//route to render login/logout page
 router.get('/login', async (req, res) =>{
     res.render('login')//add log in condition later
 });
