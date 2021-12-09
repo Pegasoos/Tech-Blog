@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Post } = require('../models');
-//add auth require later
+const withAuth = require('../utils/auth');
 
 //route to render homepage and blog posts
 router.get('/', async (req, res) =>{
@@ -15,7 +15,7 @@ router.get('/', async (req, res) =>{
     }
 });
 //route to render individual posts
-router.get('/post/:id', async (req,res) =>{
+router.get('/post/:id', withAuth, async (req, res) =>{
     try{
     const postData = await Post.findByPk(req.params.id);
     const post = postData.get({ plain:true });
@@ -27,7 +27,7 @@ catch(err){
 }
 });
 //route to find posts by poster id and render to dashboard
-router.get('/dashboard', async (req,res) =>{
+router.get('/dashboard', withAuth,  async (req, res) =>{
 try{
 //return after sessions set up
 }
