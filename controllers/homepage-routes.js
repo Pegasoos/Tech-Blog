@@ -33,13 +33,21 @@ catch(err){
 }
 });
 //route to find posts by poster id and render to dashboard
-router.get('/dashboard', withAuth,  async (req, res) =>{
+router.get('/dashboard', withAuth, async (req, res) =>{
 try{
-const userData = await Post.findAll()
-    //create poster id and compare to user_id to get posts
+const userPostData = await Post.findAll({
+    where:{
+        poster_id = req.session.user_id
+    }
+});
+const userPosts = userPostData.map((post) => post.get({ plain:true }));
+res.render('dashboard', {
+    userPosts,
+    logged_in: req.session.logged_in
+});
 }
 catch(err){
-res.status(500).json(err);
+    res.status(500).json(err);
 }
 });
 //route to render login/logout page
