@@ -7,7 +7,10 @@ router.get('/', async (req, res) =>{
     try{
         const allPostData = await Post.findAll();
         const posts = allPostData.map((post) => post.get({ plain: true }));
-        res.render('homepage', {posts});
+        res.render('homepage', {
+            posts,
+            logged_in:req.session.logged_in
+        });
     }
     catch (err) {
         console.log(err);
@@ -19,7 +22,10 @@ router.get('/post/:id', withAuth, async (req, res) =>{
     try{
     const postData = await Post.findByPk(req.params.id);
     const post = postData.get({ plain:true });
-    res.render('post', {post});
+    res.render('post', {
+        post,
+        logged_in:req.session.logged_in
+    });
 }
 catch(err){
     console.log(err);
@@ -29,14 +35,19 @@ catch(err){
 //route to find posts by poster id and render to dashboard
 router.get('/dashboard', withAuth,  async (req, res) =>{
 try{
-//return after sessions set up
+const userData = await Post.findAll()
+    //create poster id and compare to user_id to get posts
 }
 catch(err){
 res.status(500).json(err);
 }
-})
+});
 //route to render login/logout page
 router.get('/login', async (req, res) =>{
-    res.render('login')//add log in condition later
+    if(req.session.logged_in){
+        res.redirect('/dashboard');
+        return
+    }
+    res.render('login')
 });
 module.exports = router;

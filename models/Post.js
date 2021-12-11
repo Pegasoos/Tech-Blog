@@ -33,6 +33,15 @@ Post.init(
                 model:'user',
                 key:'username'
             }
+        },
+        poster_id:{
+            type:DataTypes.INTEGER,
+            allowNull:false,
+            unique:true,
+            references:{
+                model:'user',
+                key:'id'
+            }
         }
     },
     {

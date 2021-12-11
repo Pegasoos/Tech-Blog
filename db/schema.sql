@@ -12,5 +12,7 @@ title VARCHAR(30) NOT NULL,
 body VARCHAR(10000) NOT NULL,
 date DATE NOT NULL,
 poster VARCHAR(30) NOT NULL,
-FOREIGN KEY (poster) REFERENCES user (username)
+FOREIGN KEY (poster) REFERENCES user (username),
+poster_id INTEGER NOT NULL UNIQUE,
+FOREIGN KEY (poster_id) REFERENCES user(id) 
 );
