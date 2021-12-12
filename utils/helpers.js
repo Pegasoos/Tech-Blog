@@ -4,4 +4,4 @@ module.exports = {
           new Date(date).getFullYear() + 5
         }`;
       },
-}
+};
