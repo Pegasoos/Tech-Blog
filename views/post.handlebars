@@ -4,7 +4,16 @@
         Posted by {{post.poster}} on {{format_date post.date}}</h5>
     <p>{{post.body}}</p>
 </section>
-
+{{#each comments as |comment|}}
+<article class = "comments">
+<p>
+    {{comment.body}}
+</p>
+<p>
+    -{{comment.commenter}} on {{comment.date}}
+</p>
+</article>
+{{/each}}
 <!--Form for editing post-->
 <form class = "hidden">
     <label for="post-title">{{post.title}}</label>

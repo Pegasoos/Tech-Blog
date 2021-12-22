@@ -17,7 +17,7 @@ router.get('/', async (req, res) =>{
         res.status(500).json(err);
     }
 });
-//route to render individual posts
+//route to render individual posts with their comments
 router.get('/post/:id', withAuth, async (req, res) =>{
     try{
     const postData = await Post.findByPk(req.params.id);
