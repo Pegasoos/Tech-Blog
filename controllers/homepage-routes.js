@@ -37,7 +37,7 @@ router.get('/dashboard', withAuth, async (req, res) =>{
 try{
 const userPostData = await Post.findAll({
     where:{
-        poster_id = req.session.user_id
+        poster_id : req.session.user_id
     }
 });
 const userPosts = userPostData.map((post) => post.get({ plain:true }));
