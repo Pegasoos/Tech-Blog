@@ -1,19 +1,19 @@
 const loginHandler = async (e) =>{
     e.preventDefault();
+    console.log('Triggered!')
+    const username = document.querySelector('#username-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
 
-    const email = document.getElementById('email-login').value.trim();
-    const password = document.getElementById('password-login').value.trim();
-
-    if (email && password){
+    if (username && password){
 
         const response = await fetch('/api/users/login', {
             method: 'POST',
-            body: JSON.stringify({email, password}),
+            body: JSON.stringify({username, password}),
             headers: {'Content-Type': 'application/json'}
         });
 
         if(response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }
@@ -22,24 +22,23 @@ const loginHandler = async (e) =>{
 const signUpHandler = async (e) =>{
     e.preventDefault();
 
-    const email = document.getElementById('email-signup').value.trim();
-    const password = document.getElementById('password-signup').value.trim();
-    const name = document.getElementById('username-signup').value.trim();
+    const username = document.querySelector('#username-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
 
-    if (email && password && name){
+    if (username && password){
 
         const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({email, password, name}),
+            body: JSON.stringify({username, password}),
             headers: {'Content-Type': 'application/json'}
         });
 
         if(response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }
     };
-    document.getElementById('login-button').addEventListener('submit', loginHandler);
-    document.getElementById('signup-button').addEventListener('submit', signUpHandler);
 };
+document.querySelector('#login-button').addEventListener('click', loginHandler);
+document.querySelector('#signup-button').addEventListener('click', signUpHandler);

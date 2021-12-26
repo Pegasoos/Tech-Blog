@@ -1,9 +1,9 @@
 <section>
 <!--List of User's Posts-->
-{{#each}}
+{{#each userPosts}}
 <section>
-    <h1>{{post.title}}</h1>
-    <h5>{{format_date post.date}}</h5>
+    <h1>{{this.title}}</h1>
+    <h5>{{format_date this.date}}</h5>
 </section>
 {{/each}}
 </section>
@@ -13,8 +13,8 @@
     <input type="text" id="post-title">
     <label for="post-body">Content</label>
     <textarea id = "post-body"></textarea>
-    <button>Create Post</button>
+    <button id = "create-post-button">Create Post</button>
 </form>
 <!--Button to summon new post fields-->
 <button id = "post-button">New Post</button>
-<!--Add script link for javascript-->
+<script src = "../public/js/post.js"></script>

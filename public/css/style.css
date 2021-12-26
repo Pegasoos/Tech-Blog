@@ -1,0 +1,10 @@
+/*
+#FF9900 orange for background
+#000000 black for font
+*/
+h1, h2{
+    font-family: 'Orbitron', sans-serif;
+}
+body{
+    font-family: 'Roboto', 'sans-serif';
+}
