@@ -30,7 +30,7 @@ const signUpHandler = async (e) =>{
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({username, password}),
-            headers: {'Content-Type': 'application/json'}
+            headers: {'Content-Type': 'application/json'},
         });
 
         if(response.ok) {
@@ -38,7 +38,7 @@ const signUpHandler = async (e) =>{
         } else {
             alert(response.statusText);
         }
-    };
+    }
 };
 document.querySelector('#login-button').addEventListener('click', loginHandler);
 document.querySelector('#signup-button').addEventListener('click', signUpHandler);
