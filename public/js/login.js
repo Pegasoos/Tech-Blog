@@ -40,5 +40,29 @@ const signUpHandler = async (e) =>{
         }
     }
 };
+
+//use if display = none to swap display to block/show content
+//need to hide signup first
+const toggleHandler = (e) =>{
+    e.preventDefault();
+
+    const signUp = document.querySelector('#sign-up-card');
+    const login = document.querySelector('#login-card');
+
+    if(signUp.style.display === "none"){
+        login.style.display = "none";
+        signUp.style.display = "block";
+    }
+    else{
+        login.style.display = "block";
+        signUp.style.display = "none";
+    }
+};
+
+document.querySelector('#sign-up-card').style.display = "none";
+
+document.querySelectorAll('.login-toggle-button').forEach(function(button){
+button.addEventListener('click', toggleHandler)
+});
 document.querySelector('#login-button').addEventListener('click', loginHandler);
 document.querySelector('#signup-button').addEventListener('click', signUpHandler);
