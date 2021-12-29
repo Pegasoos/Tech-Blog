@@ -20,9 +20,8 @@ router.put('/:id', async (req, res) =>{
     try{
         const updatedPost = await Post.update({
             ...req.body,
-            where:{
-                id:req.params.id
-            }
+            poster: req.session.username,
+            poster_id: req.session.user_id,
         });
         res.status(200).json(updatedPost);
     }
