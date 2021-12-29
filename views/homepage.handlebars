@@ -1,4 +1,5 @@
     {{#each posts as |post|}}
+    <a href = "/post/{{post.id}}">
     <section class = "homepage-post-heading">
         <h1>
             {{post.title}}
@@ -12,4 +13,5 @@
             {{post.body}}
         </p>
     </section>
+    </a>
     {{/each}}
