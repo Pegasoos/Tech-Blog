@@ -16,7 +16,7 @@ const createPostHandler = async () => {
         }
     }
 };
-//need to figure out how to select id for individual post for delete
+
 const deletePostHandler = async (e) => {
     if(e.target.hasAttribute('data-id')) {
         const id = e.target.getAttribute('data-id');
@@ -24,7 +24,7 @@ const deletePostHandler = async (e) => {
         const response = await fetch(`/api/posts/${id}`, {
             method: 'DELETE',
         });
-        
+
         if(response.ok){
             document.location.replace('/dashboard');
         } else{
@@ -34,8 +34,8 @@ const deletePostHandler = async (e) => {
 };
 
 const updatePostHandler = async (e) => {
-    const title = document.querySelector('.post-title').value.trim();
-    const body = document.querySelector('.post-body').value.trim();
+    const title = document.querySelector('#edit-post-title').value.trim();
+    const body = document.querySelector('#edit-post-body').value.trim();
     const id = e.target.getAttribute('data-id');
     if(title && body){
         const response = await fetch(`/api/posts/${id}`, {

@@ -5,10 +5,10 @@
     <h1>{{this.title}}</h1>
     <h5>{{format_date this.date}}</h5>
     <form class = "hidden">
-    <label for="post-title">{{post.title}}</label>
-    <input type="text" class ="post-title">
-    <label for="post-body">{{post.body}}</label>
-    <textarea class = "post-body"></textarea>
+    <label for="edit-post-title">{{post.title}}</label>
+    <input type="text" id ="edit-post-title">
+    <label for="edit-post-body">{{post.body}}</label>
+    <textarea id = "edit-post-body"></textarea>
     <button id = "edit-button" data-id="{{this.id}}">Edit Post</button>
 </form>
     <button id = "delete-button" data-id="{{this.id}}">Delete Post</button>
@@ -24,6 +24,6 @@
     <button id = "create-post-button">Create Post</button>
 </form>
 <!--Button to summon new post fields-->
-<button id = "post-button">New Post</button>
+<!--<button id = "post-button">New Post</button>-->
 <!--Form for editing post-->
 <script src ='/js/post.js'></script>
