@@ -6,12 +6,12 @@
     <h5>{{format_date this.date}}</h5>
     <form class = "hidden">
     <label for="edit-post-title">{{post.title}}</label>
-    <input type="text" id ="edit-post-title">
+    <input type="text" class ="edit-post-title" data-id="{{this.id}}">
     <label for="edit-post-body">{{post.body}}</label>
-    <textarea id = "edit-post-body"></textarea>
-    <button id = "edit-button" data-id="{{this.id}}">Edit Post</button>
-</form>
-    <button id = "delete-button" data-id="{{this.id}}">Delete Post</button>
+    <textarea class = "edit-post-body" data-id="{{this.id}}"></textarea>
+    <button class = "edit-button" data-id="{{this.id}}">Edit Post</button>
+    </form>
+    <button class = "delete-button" data-id="{{this.id}}">Delete Post</button>
 </section>
 {{/each}}
 </section>

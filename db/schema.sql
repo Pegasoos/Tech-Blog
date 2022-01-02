@@ -22,6 +22,6 @@ body VARCHAR(10000) NOT NULL,
 date DATE NOT NULL,
 commenter VARCHAR(30) NOT NULL,
 FOREIGN KEY (commenter) REFERENCES user (username),
-post_id INTEGER NOT NULL UNIQUE,
+post_id INTEGER NOT NULL,
 FOREIGN KEY (post_id) REFERENCES post(id) 
 );

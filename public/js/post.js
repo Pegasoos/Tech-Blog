@@ -34,23 +34,24 @@ const deletePostHandler = async (e) => {
 };
 
 const updatePostHandler = async (e) => {
-    const title = document.querySelector('#edit-post-title').value.trim();
-    const body = document.querySelector('#edit-post-body').value.trim();
     const id = e.target.getAttribute('data-id');
-    if(title && body){
-        const response = await fetch(`/api/posts/${id}`, {
-            method:'PUT',
-            body: JSON.stringify({title, body}),
-            headers: {'Content-Type':'application/json'}
-        });
-        if(response.ok){
-            document.location.replace('/dashboard');
-        }
-        else{
-            alert(response.statusText)
-        }
+    const test = document.querySelectorAll(`[data-id = "${id}"`);
+    const title = test[0].value.trim();
+    const body = test[1].value.trim();
+ if(title && body){
+    const response = await fetch(`/api/posts/${id}`, {
+        method:'PUT',
+        body: JSON.stringify({title, body}),
+        headers: {'Content-Type':'application/json'}
+    });
+    if(response.ok){
+        document.location.replace('/dashboard');
     }
+       else{
+        alert(response.statusText)
+       }
+}
 };
 document.querySelector('#create-post-button').addEventListener('click', createPostHandler);
-document.querySelector('#delete-button').addEventListener('click', deletePostHandler);
-document.querySelector('#edit-button').addEventListener('click', updatePostHandler);
+document.querySelectorAll('.delete-button').forEach(function(button){button.addEventListener('click', deletePostHandler)});
+document.querySelectorAll('.edit-button').forEach(function(button){button.addEventListener('click', updatePostHandler)});

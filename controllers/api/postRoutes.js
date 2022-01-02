@@ -18,15 +18,17 @@ router.post('/', async (req, res) =>{
 
 router.put('/:id', async (req, res) =>{
     try{
-        const updatedPost = await Post.update({
+        const post = await Post.findOne({where:{id:req.params.id}});
+        const updatedPost = await post.update({
             ...req.body,
             poster: req.session.username,
             poster_id: req.session.user_id,
+            
         });
         res.status(200).json(updatedPost);
     }
     catch (err){
-        res.status(400).json(err)
+        res.status(400).json(err);
     }
 });
 
