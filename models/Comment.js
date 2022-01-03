@@ -18,7 +18,7 @@ Comment.init(
         commenter:{
             type: DataTypes.STRING,
             allowNull:false,
-            unique:true,
+            //unique:true,
             references:{
                 model:'user',
                 key:'username'
@@ -32,7 +32,7 @@ Comment.init(
         post_id:{
             type: DataTypes.INTEGER,
             allowNull:false,
-            unique:true,
+            //unique:true,
             references:{
                 model:'post',
                 key:'id'

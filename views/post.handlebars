@@ -4,14 +4,19 @@
         Posted by {{post.poster}} on {{format_date post.date}}</h5>
     <p>{{post.body}}</p>
 </section>
-{{#each comments as |comment|}}
+{{#each comments}}
 <article class = "comments">
 <p>
-    {{comment.body}}
+    {{this.body}}
 </p>
 <p>
-    -{{comment.commenter}} on {{comment.date}}
+    -{{this.commenter}} on {{format_date this.date}}
 </p>
 </article>
 {{/each}}
-<script src = "/js/post.js"></script>
+<h3>Comment</h3>
+    <textarea id = "comment-body">
+
+    </textarea>
+<button id = 'comment-button' data-id={{post.id}}>Comment</button>
+<script src = "/js/comment.js"></script>

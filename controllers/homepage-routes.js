@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 //route to render homepage and blog posts
@@ -20,17 +20,15 @@ router.get('/', async (req, res) =>{
 //route to render individual posts with their comments
 router.get('/post/:id', withAuth, async (req, res) =>{
     try{
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findOne({where:{id:req.params.id}});
     const post = postData.get({ plain:true });
-    //const commentData = await Comment.findAll({
-    //    where:{
-    //        post_id:req.params.id
-    //    }
-    //});
-    //const comments = commentData.get({ plain:true });
+
+    const commentData = await Comment.findAll({where:{post_id:req.params.id}});
+    const comments = commentData.map((comment) => comment.get({ plain:true }));
+
     res.render('post', {
         post,
-      //  comments,
+        comments,
         logged_in:req.session.logged_in
     });
 }
