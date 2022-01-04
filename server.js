@@ -20,10 +20,11 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 const sess = {
+    rolling:true,
     secret:process.env.SECRET,
-    resave:false,
+    resave:true,
     saveUninitialized:false,
-    cookie:{},
+    cookie:{maxAge:300000},//Cookies last 5 minutes
     store: new SequelizeStore({
       db: sequelize,
     })
