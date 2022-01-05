@@ -52,19 +52,23 @@ const updatePostHandler = async (e) => {
        }
 }
 };
-const createForm = () =>{
+const createFormAppear = () =>{
     const createPostForm = document.querySelector('#create-post-form');
-    document.querySelectorAll('section').forEach(function(button){button.classList.add('hidden')});
+    document.querySelectorAll('section').forEach(function(section){section.classList.add('hidden')});
     document.querySelector('#new-post-button').classList.add('hidden');
     createPostForm.classList.remove('hidden');
 };
 function editFormAppear() {
-    const editForm = this.children[2];
-    editForm.classList.remove('hidden');
+    document.querySelectorAll('section:not(#past-posts)').forEach(function(section){section.classList.add('hidden')});
+    document.querySelector('#new-post-button').classList.add('hidden');
+    this.children[0].classList.add('hidden');
+    this.children[1].classList.add('hidden');
+    this.children[2].classList.remove('hidden');
+    this.classList.remove('hidden');
 };
 
-document.querySelectorAll('.dash-post').forEach(function(button){button.addEventListener('click', editFormAppear)});
-document.querySelector('#new-post-button').addEventListener('click', createForm);
+document.querySelector('#new-post-button').addEventListener('click', createFormAppear);
 document.querySelector('#create-post-button').addEventListener('click', createPostHandler);
+document.querySelectorAll('.dash-post').forEach(function(button){button.addEventListener('click', editFormAppear)});
 document.querySelectorAll('.delete-button').forEach(function(button){button.addEventListener('click', deletePostHandler)});
 document.querySelectorAll('.edit-button').forEach(function(button){button.addEventListener('click', updatePostHandler)});
