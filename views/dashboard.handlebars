@@ -1,14 +1,13 @@
-<section>
+<section id = "past-posts">
 <!--List of User's Posts-->
 {{#each userPosts}}
 <section class = "dash-post">
     <h1>{{this.title}}</h1>
     <h5>{{format_date this.date}}</h5>
     <form class = "hidden">
-    <label for="edit-post-title">{{post.title}}</label>
-    <input type="text" class ="edit-post-title" data-id="{{this.id}}">
-    <label for="edit-post-body">{{post.body}}</label>
-    <textarea class = "edit-post-body" data-id="{{this.id}}"></textarea>
+    <h1>Edit Post</h1>
+    <input type="text" class ="edit-post-title" data-id="{{this.id}}" value="{{this.title}}">
+    <textarea class = "edit-post-body" data-id="{{this.id}}">{{this.body}}</textarea>
     <button class = "edit-button" data-id="{{this.id}}">Edit Post</button>
     <button class = "delete-button" data-id="{{this.id}}">Delete Post</button>
     </form>
@@ -17,6 +16,7 @@
 </section>
 <!--Form for typing new post and title-->
 <form id ="create-post-form" class = "hidden">
+    <h1>Create Post</h1>
     <label for="post-title">Title</label>
     <input type="text" class="post-title">
     <label for="post-body">Content</label>

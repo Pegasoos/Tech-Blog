@@ -54,6 +54,8 @@ const updatePostHandler = async (e) => {
 };
 const createForm = () =>{
     const createPostForm = document.querySelector('#create-post-form');
+    document.querySelectorAll('section').forEach(function(button){button.classList.add('hidden')});
+    document.querySelector('#new-post-button').classList.add('hidden');
     createPostForm.classList.remove('hidden');
 };
 function editFormAppear() {
