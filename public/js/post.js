@@ -52,6 +52,17 @@ const updatePostHandler = async (e) => {
        }
 }
 };
+const createForm = () =>{
+    const createPostForm = document.querySelector('#create-post-form');
+    createPostForm.classList.remove('hidden');
+};
+function editFormAppear() {
+    const editForm = this.children[2];
+    editForm.classList.remove('hidden');
+};
+
+document.querySelectorAll('.dash-post').forEach(function(button){button.addEventListener('click', editFormAppear)});
+document.querySelector('#new-post-button').addEventListener('click', createForm);
 document.querySelector('#create-post-button').addEventListener('click', createPostHandler);
 document.querySelectorAll('.delete-button').forEach(function(button){button.addEventListener('click', deletePostHandler)});
 document.querySelectorAll('.edit-button').forEach(function(button){button.addEventListener('click', updatePostHandler)});
