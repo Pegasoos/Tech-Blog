@@ -5,9 +5,40 @@
 h1, h2{
     font-family: 'Orbitron', sans-serif;
 }
-body{
+body, nav{
     font-family: 'Roboto', 'sans-serif';
+    /*justify-content: center;*/
+    /*text-align: center;*/
+    margin:0 auto;
+}
+section{
+    width:100%;
+}
+button{
+    background-color: #FF9900;
+    color:white;
+    border:none;
+    text-align: center;
+    font-size: 16px;
 }
 .hidden{
     display:none;
+}
+.logo{
+    background-color: white;
+}
+.dash-post{
+    background-color: silver;
+    border:2px solid black;
+    margin-top: 10px;
+}
+.dash-post-title{
+    display:inline-block;
+    margin-right:25%;
+    /*padding-top: 10px;*/
+}
+.dash-post-date{
+    margin-left:5%;
+    display:inline-block;
+    /*padding-top: 10px;*/
 }

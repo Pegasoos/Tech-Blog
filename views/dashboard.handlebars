@@ -2,14 +2,14 @@
 <!--List of User's Posts-->
 {{#each userPosts}}
 <section class = "dash-post">
-    <h1>{{this.title}}</h1>
-    <h5>{{format_date this.date}}</h5>
+    <h2 class ="dash-post-title">{{this.title}}</h1>
+    <h5 class ="dash-post-date">{{format_date this.date}}</h5>
     <form class = "hidden">
     <h1>Edit Post</h1>
     <input type="text" class ="edit-post-title" data-id="{{this.id}}" value="{{this.title}}">
     <textarea class = "edit-post-body" data-id="{{this.id}}">{{this.body}}</textarea>
-    <button class = "edit-button" data-id="{{this.id}}">Edit Post</button>
-    <button class = "delete-button" data-id="{{this.id}}">Delete Post</button>
+    <button class = "edit-button" data-id="{{this.id}}"><i class="fas fa-i-cursor"></i> Edit Post</button>
+    <button class = "delete-button" data-id="{{this.id}}"><i class="fas fa-minus-square"></i> Delete Post</button>
     </form>
 </section>
 {{/each}}
@@ -21,8 +21,8 @@
     <input type="text" class="post-title">
     <label for="post-body">Content</label>
     <textarea class = "post-body"></textarea>
-    <button id = "create-post-button">Create Post</button>
+    <button id = "create-post-button"><i class="fas fa-bolt"></i> Create Post</button>
 </form>
 <!--Button to summon new post fields-->
-<button id = "new-post-button">New Post</button>
+<button id = "new-post-button"><i class="fas fa-plus-square"></i> New Post</button>
 <script src ='/js/post.js'></script>
