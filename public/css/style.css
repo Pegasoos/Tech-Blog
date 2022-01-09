@@ -5,8 +5,16 @@
 h1, h2{
     font-family: 'Orbitron', sans-serif;
 }
-body, nav{
+body{
+    text-align:center;
+    color:white;
     font-family: 'Roboto', 'sans-serif';
+    background: rgb(11,12,16);
+    background: radial-gradient(circle, rgba(11,12,16,1) 26%, rgba(71,121,171,1) 53%, rgba(31,40,51,1) 100%);
+    background-size: cover;
+    width:100%;
+    height:100%;
+    /* Black:#0B0C10, Grey:#1F2833, Light Grey:#C5C6C7, Light Teal: #66FCF1, Dark Teal: #45A29E*/
     /*justify-content: center;*/
     /*text-align: center;*/
     margin:0 auto;
@@ -15,30 +23,106 @@ section{
     width:100%;
 }
 button{
-    background-color: #FF9900;
+    border:solid #66FCF1 2px;
+    background: none;
     color:white;
-    border:none;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left:7px;
+}
+.homepage-post-heading{
+    margin-top: 30px;
+}
+.homepage-post-heading h2{
+    margin-left: 60px;
+    margin-right: 10px;
+}
+.homepage-post-heading h2, .homepage-post-heading h6{
+    display:inline-block;
+}
+.navbar-toggler-icon{
+    color:#45A29E
+}
+input{
+    background-color: lightgray;
+    border-radius: 4px;
+    width:20%;
+    height:50px;
+}
+a{
+    text-decoration: none;
+}
+a.logo:link{
+    color:white;
+}
+a.logo:visited{
+    color:white;
+}
+a.nav-link:visited{
+    color:white;
+}
+a.nav-link:link{
+    color:white;
+}
+a:visited{
+    color:#66FCF1;
+}
+a:link{
+    color:#45A29E;
 }
 .hidden{
     display:none;
 }
 .logo{
-    background-color: white;
+    background-color:#45A29E;
 }
 .dash-post{
-    background-color: silver;
-    border:2px solid black;
     margin-top: 10px;
+    cursor: pointer;
+    color:#66FCF1;
 }
 .dash-post-title{
     display:inline-block;
-    margin-right:25%;
-    /*padding-top: 10px;*/
 }
 .dash-post-date{
-    margin-left:5%;
+    margin-left: 12%;
     display:inline-block;
-    /*padding-top: 10px;*/
+}
+#past-posts{
+    margin-top: 20px;
+}
+#new-post-button{
+    margin-top:30px;
+}
+textarea{
+    background-color: lightgray;
+    border-radius: 4px;
+    width:20%;
+    height:50px;
+    margin-bottom: 10px;
+}
+.navbar{
+    padding-bottom: 20px;
+    height:100%;
+    background-color:#1F2833;
+    color: white;
+}
+.login-toggle-button{
+    margin-top:10px;
+    margin-left: 80px;
+    width:18%;
+    height:40px;
+}
+#login-button, #signup-button{
+    margin-top:20px;
+    margin-left: 80px;
+    width:18%;
+    height:40px;
+}
+#username-signup, #username-login{
+    margin-bottom: 25px;
+}
+.page-title{
+    margin-top:20px;
 }

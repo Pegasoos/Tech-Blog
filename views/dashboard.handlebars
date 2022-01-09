@@ -8,21 +8,21 @@
     <h1>Edit Post</h1>
     <input type="text" class ="edit-post-title" data-id="{{this.id}}" value="{{this.title}}">
     <textarea class = "edit-post-body" data-id="{{this.id}}">{{this.body}}</textarea>
-    <button class = "edit-button" data-id="{{this.id}}"><i class="fas fa-i-cursor"></i> Edit Post</button>
-    <button class = "delete-button" data-id="{{this.id}}"><i class="fas fa-minus-square"></i> Delete Post</button>
+    <button class = "edit-button btn-info" data-id="{{this.id}}"><i class="fas fa-i-cursor"></i> Edit Post</button>
+    <button class = "delete-button btn-info" data-id="{{this.id}}"><i class="fas fa-minus-square"></i> Delete Post</button>
     </form>
 </section>
 {{/each}}
 </section>
 <!--Form for typing new post and title-->
-<form id ="create-post-form" class = "hidden">
+<form id ="create-post-form" class = "hidden create-post-form">
     <h1>Create Post</h1>
-    <label for="post-title">Title</label>
+    <h4>Title</h4>
     <input type="text" class="post-title">
-    <label for="post-body">Content</label>
-    <textarea class = "post-body"></textarea>
-    <button id = "create-post-button"><i class="fas fa-bolt"></i> Create Post</button>
+    <h4>Content</h4>
+    <textarea class = "post-body"></textarea><br>
+    <button id = "create-post-button" class ="btn-info"><i class="fas fa-bolt"></i> Create Post</button>
 </form>
 <!--Button to summon new post fields-->
-<button id = "new-post-button"><i class="fas fa-plus-square"></i> New Post</button>
+<button id = "new-post-button" class="btn-info"><i class="fas fa-plus-square"></i> New Post</button>
 <script src ='/js/post.js'></script>

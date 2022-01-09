@@ -1,12 +1,10 @@
     {{#each posts as |post|}}
     <a href = "/post/{{post.id}}">
     <section class = "homepage-post-heading">
-        <h1>
+        <h2>
             {{post.title}}
-        </h1>
-        <h6>
-            Posted by {{post.poster}} on {{format_date post.date}}
-        </h6>
+        </h2>
+        <h6>Posted by {{post.poster}} on {{format_date post.date}}</h6>
     </section>
     <section>
         <p>

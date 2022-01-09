@@ -24,7 +24,7 @@ const sess = {
     secret:process.env.SECRET,
     resave:true,
     saveUninitialized:false,
-    cookie:{maxAge:300000},//Cookies last 5 minutes
+    cookie:{maxAge:300000, SameSite:'none'},//Cookies last 5 minutes
     store: new SequelizeStore({
       db: sequelize,
     })
