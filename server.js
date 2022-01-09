@@ -1,12 +1,12 @@
-const express = require("express");
-const path = require("path");
-const exphbs = require("express-handlebars");
+const express = require('express');
+const path = require('path');
+const exphbs = require('express-handlebars');
 
 const session = require('express-session');
 const app = express();
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-require('dotenv').config();
+const dotenv = require('dotenv').config()
 
 const helpers = require('./utils/helpers');
 
