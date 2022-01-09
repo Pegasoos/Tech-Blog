@@ -1,4 +1,4 @@
-<section class = "flex-row justify-center">
+<section class = "comment-post">
     <h1>{{post.title}}</h1>
     <h5>
         Posted by {{post.poster}} on {{format_date post.date}}</h5>
@@ -14,9 +14,11 @@
 </p>
 </article>
 {{/each}}
+<div id ="comment">
 <h3>Comment</h3>
     <textarea id = "comment-body">
 
     </textarea>
 <button id = 'comment-button' data-id={{post.id}}>Comment <i class="fas fa-comment"></i></button>
+</div>
 <script src = "/js/comment.js"></script>

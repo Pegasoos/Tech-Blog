@@ -1,7 +1,3 @@
-/*
-#FF9900 orange for background
-#000000 black for font
-*/
 h1, h2{
     font-family: 'Orbitron', sans-serif;
 }
@@ -14,9 +10,6 @@ body{
     background-size: cover;
     width:100%;
     height:100%;
-    /* Black:#0B0C10, Grey:#1F2833, Light Grey:#C5C6C7, Light Teal: #66FCF1, Dark Teal: #45A29E*/
-    /*justify-content: center;*/
-    /*text-align: center;*/
     margin:0 auto;
 }
 section{
@@ -89,6 +82,12 @@ a:link{
     margin-left: 12%;
     display:inline-block;
 }
+.edit-post-title, .edit-post-body{
+  display:block;
+  margin-left: 770px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 #past-posts{
     margin-top: 20px;
 }
@@ -124,5 +123,14 @@ textarea{
     margin-bottom: 25px;
 }
 .page-title{
+    margin-top:20px;
+}
+#comment-body{
+    height:100px;
+    display:block;
+    margin-left: 780px;
+}
+.comment-post{
+    margin-bottom: 20px;
     margin-top:20px;
 }
