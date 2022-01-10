@@ -12,7 +12,7 @@ const commentHandler = async (e) =>{
             document.location.replace(`/post/${post_id}`)
         }
         else{
-            alert(response.statusText)
+            alert("Session may have expired. Try logging back in.")
         }
     }
 };

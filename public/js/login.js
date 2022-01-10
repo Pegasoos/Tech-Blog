@@ -1,6 +1,5 @@
 const loginHandler = async (e) =>{
     e.preventDefault();
-    console.log('Triggered!')
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
 
@@ -15,7 +14,7 @@ const loginHandler = async (e) =>{
         if(response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert(response.statusText);
+            alert("Wrong Username or Password.");
         }
     }
 };
@@ -36,7 +35,7 @@ const signUpHandler = async (e) =>{
         if(response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert(response.statusText);
+            alert("Invalid Username or Password: Passwords must be at least 6 characters!");
         }
     }
 };

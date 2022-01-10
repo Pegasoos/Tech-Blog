@@ -12,7 +12,7 @@ const createPostHandler = async () => {
             document.location.replace('/dashboard')
         }
         else{
-            alert(response.statusText)
+            alert("Session may have expires.Try logging back in")
         }
     }
 };
@@ -28,7 +28,7 @@ const deletePostHandler = async (e) => {
         if(response.ok){
             document.location.replace('/dashboard');
         } else{
-            alert('Failed to delete post.')
+            alert("Session may have expired. Try logging back in")
         }
     }
 };
@@ -48,7 +48,7 @@ const updatePostHandler = async (e) => {
         document.location.replace('/dashboard');
     }
        else{
-        alert(response.statusText)
+        alert("Session may have expired. Try logging back in.")
        }
 }
 };
