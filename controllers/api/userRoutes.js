@@ -8,6 +8,7 @@ const newUser = await User.create(req.body);
 req.session.save(() => {
     req.session.user_id = newUser.id;
     req.session.logged_in = true;
+    req.session.username = newUser.username
 
     res.status(200).json(newUser);
 })
@@ -20,6 +21,7 @@ req.session.save(() => {
 router.post('/login', async (req, res) =>{
 try{
     const userData = await User.findOne({ where: {username:req.body.username} });
+    console.log(userData)
     if(!userData){
         res.status(400).json({message:"Incorrect Username or Password!"});
         return

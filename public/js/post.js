@@ -1,5 +1,5 @@
 const createPostHandler = async () => {
-    const title = document.querySelector('.post-title').value.trim();
+    const title = document.querySelector('.post-title').value.trim(); 
     const body = document.querySelector('.post-body').value.trim();
 
     if(title && body){
